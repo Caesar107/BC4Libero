@@ -1,0 +1,32 @@
+# Libero Spatial BC 训练依赖
+
+# 核心依赖
+torch>=2.0.0
+numpy>=1.24.0
+gymnasium>=0.28.0
+
+# 行为克隆和强化学习
+stable-baselines3>=2.0.0
+imitation>=0.4.0
+
+# Libero 环境 (需要根据实际安装方式调整)
+# libero-bench>=1.0.0
+# 或者从源码安装:
+# git+https://github.com/Lifelong-Robot-Learning/LIBERO.git
+
+# 数据处理
+h5py>=3.8.0
+pandas>=2.0.0
+
+# 配置管理
+pyyaml>=6.0
+
+# 可视化
+tensorboard>=2.13.0
+matplotlib>=3.7.0
+
+# 工具库
+tqdm>=4.65.0
+wandb>=0.15.0  # 可选: 用于实验跟踪
+
+

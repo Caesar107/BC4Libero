@@ -1,0 +1,59 @@
+# Libero Spatial BC 训练配置文件
+
+# 任务配置
+task:
+  name: "libero_spatial"
+  env_type: "libero"
+
+# 数据配置
+data:
+  demonstrations_path: "data/libero_spatial_demonstrations.hdf5"
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+# 模型配置
+model:
+  policy_type: "MlpPolicy"  # 可选: MlpPolicy, CnnPolicy, MultiInputPolicy
+  features_extractor_class: "NatureCNN"  # 用于视觉输入
+  net_arch: [256, 256]  # 网络架构
+
+# 训练配置
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 3e-4
+  weight_decay: 1e-5
+  gradient_clip_norm: 1.0
+  
+  # 优化器配置
+  optimizer: "Adam"
+  optimizer_kwargs:
+    betas: [0.9, 0.999]
+    eps: 1e-8
+
+# 评估配置
+evaluation:
+  eval_freq: 500  # 每 N 步评估一次
+  n_eval_episodes: 10
+  deterministic: true
+
+# 保存配置
+save:
+  save_freq: 1000  # 每 N 步保存一次
+  save_path: "models"
+  log_path: "logs"
+  tensorboard_log: "logs/tensorboard"
+
+# 设备配置
+device: "cuda"  # 或 "cpu"
+
+# 随机种子
+seed: 42
+
+# 其他配置
+misc:
+  verbose: 1
+  progress_bar: true
+
+
